@@ -2,10 +2,10 @@
 
 one:
   original_url: MyText
-  custom_url: MyString
+  chibi_url: MyString
   clicks: 1
 
 two:
   original_url: MyText
-  custom_url: MyString
+  chibi_url: MyString
   clicks: 1

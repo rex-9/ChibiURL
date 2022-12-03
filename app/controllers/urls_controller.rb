@@ -4,9 +4,9 @@ class UrlsController < ApplicationController
   end
 
   def show
-    @url = Url.find_by(custom_url: params[:custom_url])
+    @url = Url.find_by(chibi_url: params[:chibi_url])
     render 'urls/404', status: 404 if @url.nil?
-    @url.update_attribute(:clicks, @url.clicks + 1) unless @url.nil?
+    @url&.update_attribute(:clicks, @url.clicks + 1)
     redirect_to @url.original_url, allow_other_host: true
   end
 
@@ -16,7 +16,7 @@ class UrlsController < ApplicationController
 
   def create
     @url = Url.new(url_params)
-    @url.custom_url = @url.custom_url.downcase if !@url.custom_url.nil? && @url.custom_url != ''
+    @url.chibi_url = @url.chibi_url.downcase if !@url.chibi_url.nil? && @url.chibi_url != ''
     if @url.save
       redirect_to '/'
     else
@@ -28,6 +28,6 @@ class UrlsController < ApplicationController
   private
 
   def url_params
-    params.require(:url).permit(:original_url, :custom_url)
+    params.require(:url).permit(:original_url, :chibi_url)
   end
 end
