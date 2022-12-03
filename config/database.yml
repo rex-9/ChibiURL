@@ -85,6 +85,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: ChibiURL_production
   username: ChibiURL
   password: <%= ENV["CHIBIURL_DATABASE_PASSWORD"] %>
