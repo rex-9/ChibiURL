@@ -1,6 +1,6 @@
 <% @urls.each do |url| %>
   <ul>
-    <li><%= url.id %> - <%= link_to url.short, url.short, :target => '_blank' %> - <%= url.long %> - <%= url.clicks %></li>
+    <li><%= url.id %> - <%= link_to url.short, "urls/#{url.short}", :target => '_blank' %> - <%= url.long %> - <%= url.clicks %></li>
   </ul>
 <% end %>
 <%= link_to 'Create another link', new_url_path %>

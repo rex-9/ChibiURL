@@ -21,7 +21,7 @@ class UrlsController < ApplicationController
     @url.short = @url.short.downcase if !@url.short.nil? && @url.short != ''
 
     if @url.save
-      redirect_to urls_path
+      redirect_to '/'
     else
       flash[:alert] = 'URL not created'
       render :new
