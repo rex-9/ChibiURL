@@ -1,6 +1,4 @@
 class UrlsController < ApplicationController
-  def dashboard; end
-
   def index
     @urls = Url.all.order(:id)
   end
