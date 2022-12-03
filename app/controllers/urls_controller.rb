@@ -4,10 +4,10 @@ class UrlsController < ApplicationController
   end
 
   def show
-    @url = Url.find_by(short: params[:short])
+    @url = Url.find_by(custom_url: params[:custom_url])
     render 'urls/404', status: 404 if @url.nil?
     @url.update_attribute(:clicks, @url.clicks + 1) unless @url.nil?
-    redirect_to @url.long, allow_other_host: true
+    redirect_to @url.original_url, allow_other_host: true
   end
 
   def new
@@ -16,19 +16,18 @@ class UrlsController < ApplicationController
 
   def create
     @url = Url.new(url_params)
-    @url.short = @url.short.downcase if !@url.short.nil? && @url.short != ''
-
+    @url.custom_url = @url.custom_url.downcase if !@url.custom_url.nil? && @url.custom_url != ''
     if @url.save
       redirect_to '/'
     else
-      flash[:alert] = 'URL not created'
-      render :new
+      flash[:alert] = @url.errors.full_messages.first
+      redirect_back(fallback_location: root_path)
     end
   end
 
   private
 
   def url_params
-    params.require(:url).permit(:long, :short)
+    params.require(:url).permit(:original_url, :custom_url)
   end
 end

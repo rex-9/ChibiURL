@@ -15,8 +15,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_154011) do
   enable_extension "plpgsql"
 
   create_table "urls", force: :cascade do |t|
-    t.text "long", null: false
-    t.string "short"
+    t.text "original_url", null: false
+    t.string "custom_url"
     t.integer "clicks", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
