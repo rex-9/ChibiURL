@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
+  .input {
+    @apply h-12 mt-2 bg-primary border-2 border-secondary rounded-lg
+  }
+
   .table-header {
     @apply bg-gray-100 border-2 border-gray-200 px-4 py-2;
   }
@@ -12,7 +18,7 @@
   }
 
   .btn {
-    @apply bg-primary border-secondary border-2 rounded-full font-bold py-2 px-4 hover:bg-secondary hover:border-primary hover:text-text;
+    @apply cursor-pointer bg-primary border-secondary border-2 rounded-full font-bold py-2 px-4 hover:bg-secondary hover:border-primary hover:text-text;
   }
 }
 
