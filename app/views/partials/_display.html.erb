@@ -21,7 +21,7 @@
             <td class="table-body text-center"><%= url.clicks %></td>
             <td class="table-body flex items-center gap-2">
               <%= button_tag image_tag("copy.png", class: "w-5 hover:w-6"), class: "clipboard-btn", :'data-clipboard-action' => "copy", :'data-clipboard-target' => "#id-#{url.id}" %>
-              <%= link_to url.chibi_url, "urls/#{url.chibi_url}", id: "id-#{url.id}", target: '_blank', class: 'hover:text-green-500 hover:underline' %>
+              <%= link_to url.chibi_url, chibi_path(url.chibi_url), id: "id-#{url.id}", target: '_blank', class: 'hover:text-green-500 hover:underline' %>
             </td>
             <td class="table-body"><%= url.original_url %></td>
             <% if header == "My URLs" %>

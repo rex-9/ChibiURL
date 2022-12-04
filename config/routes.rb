@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :urls, only: [:index]
   end
   resources :urls, only: [:new, :create, :destroy]
-  get "urls/:chibi_url", to: "urls#show"
+  get "urls/:chibi_url", to: "urls#show", as: "chibi"
 end
