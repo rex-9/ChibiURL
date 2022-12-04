@@ -1,6 +1,8 @@
-<% @urls.each do |url| %>
-  <ul>
-    <li><%= url.id %> - <%= link_to url.chibi_url, "urls/#{url.chibi_url}", :target => '_blank' %> - <%= url.original_url %> - <%= url.clicks %></li>
-  </ul>
-<% end %>
-<%= link_to 'Create another link', new_url_path %>
+<section>
+  <% @urls.each do |url| %>
+    <ul>
+      <li><%= url.id %> - <%= link_to url.chibi_url, "urls/#{url.chibi_url}", :target => '_blank' %> - <%= url.original_url %> - <%= url.clicks %></li>
+    </ul>
+  <% end %>
+  <%= link_to 'Create another link', new_url_path %>
+</section>

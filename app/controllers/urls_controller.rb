@@ -18,6 +18,7 @@ class UrlsController < ApplicationController
     @url = Url.new(url_params)
     @url.chibi_url = @url.chibi_url.downcase if !@url.chibi_url.nil? && @url.chibi_url != ''
     if @url.save
+      flash[:notice] = "Chibi URL saved successfully"
       redirect_to '/'
     else
       flash[:alert] = @url.errors.full_messages.first

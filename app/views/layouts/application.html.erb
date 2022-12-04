@@ -6,14 +6,27 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
-  <body class="">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <body>
+    <div class="flex justify-center items-center pt-8">
+      <%= image_tag("mascot.png", class: "h-36") %>
+      <h1 class="text-text font-bold text-2xl ml-4">Chibi URL</h1>
+    </div>
+    <%= image_tag("top.png", class: "w-screen fixed -z-10 top-0 h-[300px] left-0 w-screen object-cover") %>
+    <div class="fixed -z-10 bottom-0 left-0">
+      <%= image_tag("bl.png") %>
+    </div>
+    <div class="fixed -z-10 bottom-0 right-0">
+      <%= image_tag("br.png") %>
+    </div>
+    <div class="flex justify-center w-full pt-32">
+      <div>
+        <p class=""><%= notice %></p>
+        <p class="mb-8"><%= alert %></p>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
