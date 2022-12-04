@@ -1,5 +1,5 @@
 class UrlsController < ApplicationController
-  before_action :authenticate_user!, except: [:public, :show]
+  before_action :authenticate_user!, except: %i[public show]
 
   def index
     @urls = Url.all.order(:id)
