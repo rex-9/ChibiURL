@@ -82,7 +82,6 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    clipboard-rails (1.7.1)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     debug (1.7.0)
@@ -233,7 +232,6 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
-  clipboard-rails (~> 1.7)
   debug
   devise
   importmap-rails
