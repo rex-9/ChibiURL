@@ -4,7 +4,7 @@ clipboard.on('success', function(e) {
   console.info('Action:', e.action);
   console.info('Text:', e.text);
   console.info('Trigger:', e.trigger);
-  document.getElementById('copied').innerHTML = `Success: Copied ${e.text} to clipboard!`;
+  document.getElementById('copied').innerHTML = `Success: Copied "${e.text}" to clipboard!`;
   e.clearSelection();
 });
 

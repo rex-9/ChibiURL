@@ -11,22 +11,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
   </head>
   <body>
-    <div class="flex justify-center items-center pt-8">
+    <div class="flex justify-center items-center pt-6">
       <%= image_tag("mascot.png", class: "h-36") %>
       <h1 class="text-text font-bold text-2xl ml-4">Chibi URL</h1>
     </div>
-    <%= image_tag("top.png", class: "w-screen fixed -z-10 top-0 h-[300px] left-0 w-screen object-cover") %>
+    <%= image_tag("top.png", class: "w-screen fixed -z-10 top-0 h-[260px] left-0 w-screen object-cover") %>
     <div class="fixed -z-10 bottom-0 left-0">
       <%= image_tag("bl.png") %>
     </div>
     <div class="fixed -z-10 bottom-0 right-0">
       <%= image_tag("br.png") %>
     </div>
-    <div class="flex justify-center w-full pt-20">
+    <div class="flex justify-center w-full pt-24">
       <div>
-        <% if current_page?("/") %>
-          <p id="copied" class="bg-green-200 border-gray-200 border-2 text-green-900 w-fit rounded-lg px-4 py-1 font-bold">Try Copying one of the Chibi URLs</p>
-        <% end %>
         <% if notice %>
           <p class="bg-green-200 border-gray-200 border-2 text-green-900 w-fit rounded-lg px-4 py-1 font-bold mb-4"><%= notice %></p>
         <% end %>

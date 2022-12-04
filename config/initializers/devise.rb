@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '34933d940949b32eaaee36cb8d48612afaf59a9f42826fc22524cc0975eb7867b4058494a3b86261854c9a975c0b4379f64564cf5133edaa1fa890fa94d50afb'
+  # config.secret_key = '805ae49bf78147206cccdeb26c8572b3ed6c59ea490b152564229f2426e265ea28eb47c2c88f0418d41d48566e07d57cafc893fe69b5c61efb15e4ea90b5ba8a'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '00b4b5e107b9a4e3b5f23601db9f73b1abf2f5e93546df5fff82f8f1aa36ee82f545fb8629543f624cf322daf36547b67c59e25108627c973a33fedf0e44c180'
+  # config.pepper = '0b8ed5d15720d8ca140f93b2499fd40ecb4e1afc2086ddecfb51772477c0e37f536877c2d35dbc5bffb1d422c06a1c355fe9e788e9f916eda7c3db1180933fe0'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -183,7 +183,7 @@ Devise.setup do |config|
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  # config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
