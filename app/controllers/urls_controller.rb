@@ -2,7 +2,7 @@ class UrlsController < ApplicationController
   before_action :authenticate_user!, except: %i[public show]
 
   def index
-    @urls = Url.all.order(:id)
+    @urls = current_user.urls.order(:id)
   end
 
   def public
@@ -26,6 +26,17 @@ class UrlsController < ApplicationController
     if @url.save
       flash[:notice] = "Chibi URL saved successfully: #{@url.chibi_url}"
       redirect_to '/'
+    else
+      flash[:alert] = @url.errors.full_messages.first
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
+  def destroy
+    @url = Url.find_by(id: params[:id])
+    if @url.destroy
+      flash[:notice] = "Url deleted successfully"
+      redirect_to root_path
     else
       flash[:alert] = @url.errors.full_messages.first
       redirect_back(fallback_location: root_path)

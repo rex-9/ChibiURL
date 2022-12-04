@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root to: "urls#public"
-  resources :urls, only: [:new, :create]
+  resources :users do
+    resources :urls, only: [:index]
+  end
+  resources :urls, only: [:new, :create, :destroy]
   get "urls/:chibi_url", to: "urls#show"
 end
