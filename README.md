@@ -7,7 +7,9 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [� Getting Started ](#-getting-started-)
+    - [Video Presentation ](#video-presentation-)
+    - [Screenshots ](#screenshots-)
+  - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
@@ -17,6 +19,8 @@
       - [4. Create the databases:](#4-create-the-databases)
       - [5. Migrate the databases:](#5-migrate-the-databases)
       - [6. Seed the dummy data: (Optional)](#6-seed-the-dummy-data-optional)
+      - [6. Install NPM packages:](#6-install-npm-packages)
+      - [7. Build and Watch Tailwindcss:](#7-build-and-watch-tailwindcss)
     - [Usage](#usage)
       - [7. Run the server on port 3001:](#7-run-the-server-on-port-3001)
     - [Run tests](#run-tests)
@@ -58,14 +62,38 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Users can create shortened URL/Links against a long URL**
-- **A click to the short URL should redirect the user to the original long URL**
-- **Shortened link is as small as possible**
-- **Users can create custom url with maximum character limit of 16**
-- **Application collects metrics for most clicked links**
-- **Application is deployed on Render**
+- **Display URLs (including how many times the link is clicked)**
+    - **My URLs**
+    - **Public URLs**
+- **Copy URLs**
+- **Create URLs (with Error Handling)**
+- **Delete Owned URLs**
+- **Sign In**
+- **Sign Up**
+- **Sign Out**
+
+### Video Presentation <a name="video-presentation"></a>
+
+- [Video Demo](https://www.loom.com/share/13be355568724ca6b5d8948f1ad2b7e9)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Screenshots <a name="screenshots"></a>
+
+- **Public URLs Page**
+- [Public URLs Page](./app/assets/images/public.png)
+
+- **Sign In Page**
+- [Sign In Page](./app/assets/images/sign-in.png)
+
+- **Sign Up Page**
+- [Public URL](./app/assets/images/sign-up.png)
+
+- **Create Chibi URL Page**
+- [Public URL](./app/assets/images/create.png)
+
+- **My URLs Page**
+- [Public URL](./app/assets/images/my.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,6 +155,18 @@ rails db:migrate
 
 ```
 rails db:seed
+```
+
+#### 6. Install NPM packages:
+
+```
+npm i
+```
+
+#### 7. Build and Watch Tailwindcss:
+
+```
+rails tailwindcss:watch
 ```
 
 ### Usage
