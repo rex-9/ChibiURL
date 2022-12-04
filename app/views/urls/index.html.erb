@@ -1,25 +1,27 @@
 <section>
   <h1 class="flex justify-center mb-4 text-lg text-text">Chibi URLs</h1>
-  <table>
-    <thead>
-      <tr>
-        <th class="table-header">ID</th>
-        <th class="table-header">Clicks</th>
-        <th class="table-header">Chibi URL</th>
-        <th class="table-header">Original URL</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @urls.each do |url| %>
-        <tr class="even:bg-secondary/50 odd:bg-primary/50">
-          <td class="table-body"><%= url.id %></td>
-          <td class="table-body"><%= url.clicks %></td>
-          <td class="table-body hover:text-green-500 hover:text-xl"><%= link_to url.chibi_url, "urls/#{url.chibi_url}", target: '_blank' %></td>
-          <td class="table-body"><%= url.original_url %></td>
+  <div class="h-[300px] overflow-y-auto">
+    <table>
+      <thead>
+        <tr>
+          <th class="table-header">ID</th>
+          <th class="table-header">Clicks</th>
+          <th class="table-header">Chibi URL</th>
+          <th class="table-header">Original URL</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @urls.each do |url| %>
+          <tr class="even:bg-secondary/50 odd:bg-primary/50">
+            <td class="table-body"><%= url.id %></td>
+            <td class="table-body"><%= url.clicks %></td>
+            <td class="table-body hover:text-green-500 hover:text-xl"><%= link_to url.chibi_url, "urls/#{url.chibi_url}", target: '_blank' %></td>
+            <td class="table-body"><%= url.original_url %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
   <div class="flex justify-center my-8">
     <%= link_to 'Create new Chibi URL', new_url_path, class: 'btn' %>
   </div>
