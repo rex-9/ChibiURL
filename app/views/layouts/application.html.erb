@@ -22,13 +22,16 @@
     <div class="fixed -z-10 bottom-0 right-0">
       <%= image_tag("br.png") %>
     </div>
-    <div class="flex justify-center w-full pt-28">
+    <div class="flex justify-center w-full pt-20">
       <div>
+        <% if current_page?("/") %>
+          <p id="copied" class="bg-green-200 border-gray-200 border-2 text-green-900 w-fit rounded-lg px-4 py-1 font-bold">Try Copying one of the Chibi URLs</p>
+        <% end %>
         <% if notice %>
           <p class="bg-green-200 border-gray-200 border-2 text-green-900 w-fit rounded-lg px-4 py-1 font-bold mb-4"><%= notice %></p>
         <% end %>
         <% if alert %>
-          <p class="bg-red-200 border-gray-orange-200 border-2 text-red-900 w-fit rounded-lg px-4 py-1 font-bold mb-4"><%= alert %></p>
+          <p class="bg-red-200 border-gray-orange-200 border-2 text-red-900 w-fit rounded-lg px-4 py-1 font-bold mb-4 mt-8"><%= alert %></p>
         <% end %>
         <%= yield %>
       </div>
