@@ -1,6 +1,20 @@
 <%= flash[:error] %>
 <%= form_with model: @url do |form| %>
-  <p>Original Url: <%= form.text_field :original_url %></p>
-  <p>Chibi Url: <%= form.text_field :chibi_url %></p>
-  <%= form.submit %>
+  <div class="flex items-center gap-2">
+    <div>
+      <p class="h-12 flex items-center mt-2">Original URL</p>
+      <p class="h-12 flex items-center mt-2">Chibi URL</p>
+    </div>
+    <div>
+      <p class="h-12 flex items-center mt-2 mr-4">:</p>
+      <p class="h-12 flex items-center mt-2 mr-4">:</p>
+    </div>
+    <div>
+      <%= form.text_field :original_url, class: "h-12 mt-2 bg-primary border-2 border-secondary rounded-lg block" %>
+      <%= form.text_field :chibi_url, class: "h-12 mt-2 bg-primary border-2 border-secondary rounded-lg" %>
+    </div>
+  </div>
+  <div class="flex justify-center mt-8">
+  <%= form.submit "Create a new Chibi URL", class: "btn" %>
+  </div>
 <% end %>
