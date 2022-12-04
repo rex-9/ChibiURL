@@ -1,6 +1,12 @@
 class UrlsController < ApplicationController
+  before_action :authenticate_user!, except: [:public, :show]
+
   def index
     @urls = Url.all.order(:id)
+  end
+
+  def public
+    @urls = Url.where(public: true).order(:id)
   end
 
   def show
@@ -18,7 +24,7 @@ class UrlsController < ApplicationController
     @url = Url.new(url_params)
     @url.chibi_url = @url.chibi_url.downcase if !@url.chibi_url.nil? && @url.chibi_url != ''
     if @url.save
-      flash[:notice] = 'Chibi URL saved successfully'
+      flash[:notice] = "Chibi URL saved successfully: #{@url.chibi_url}"
       redirect_to '/'
     else
       flash[:alert] = @url.errors.full_messages.first
@@ -29,6 +35,6 @@ class UrlsController < ApplicationController
   private
 
   def url_params
-    params.require(:url).permit(:original_url, :chibi_url)
+    params.require(:url).permit(:original_url, :chibi_url, :public)
   end
 end
