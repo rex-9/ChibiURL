@@ -1,4 +1,10 @@
 <section>
+  <!-- Target -->
+  <textarea id="bar">Mussum ipsum cacilds...</textarea>
+  <!-- Trigger -->
+  <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#bar">
+    Copy to clipboard
+  </button>
   <h1 class="flex justify-center mb-4 text-lg text-text">Chibi URLs</h1>
   <div class="h-[300px] overflow-y-auto">
     <table>
@@ -15,7 +21,7 @@
           <tr class="even:bg-secondary/50 odd:bg-primary/50">
             <td class="table-body"><%= url.id %></td>
             <td class="table-body"><%= url.clicks %></td>
-            <td class="table-body hover:text-green-500 hover:text-xl"><%= link_to url.chibi_url, "urls/#{url.chibi_url}", target: '_blank' %></td>
+            <td class="table-body hover:text-green-500 hover:text-lg"><%= link_to url.chibi_url, "urls/#{url.chibi_url}", target: '_blank' %></td>
             <td class="table-body"><%= url.original_url %></td>
           </tr>
         <% end %>
