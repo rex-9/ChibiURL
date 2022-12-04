@@ -46,6 +46,6 @@ class UrlsController < ApplicationController
   private
 
   def url_params
-    params.require(:url).permit(:original_url, :chibi_url, :public)
+    params.require(:url).permit(:original_url, :chibi_url, :public).merge(user_id: current_user.id)
   end
 end
