@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Url, type: :model do
   before(:example) do
-    @rex = User.create(username: "rex", password: "password")
+    @rex = User.create(username: 'rex', password: 'password')
   end
 
   subject { Url.new(user_id: @rex.id, original_url: 'https://www.google.com', public: true, chibi_url: 'google') }
@@ -15,12 +15,12 @@ RSpec.describe Url, type: :model do
   end
 
   it 'Original URL should NOT start with http or https' do
-    subject.original_url = "google"
+    subject.original_url = 'google'
     expect(subject).to_not be_valid
   end
 
   it 'Original URL should start with http or https' do
-    subject.original_url = "https://www.google.com"
+    subject.original_url = 'https://www.google.com'
     expect(subject).to be_valid
   end
 end
