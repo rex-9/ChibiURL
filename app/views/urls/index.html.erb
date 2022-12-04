@@ -1,11 +1,6 @@
 <section>
-  <!-- Target -->
-  <textarea id="bar">Mussum ipsum cacilds...</textarea>
-  <!-- Trigger -->
-  <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#bar">
-    Copy to clipboard
-  </button>
   <h1 class="flex justify-center mb-4 text-lg text-text">Chibi URLs</h1>
+  <p id="copied" class="bg-green-200 border-gray-200 border-2 text-green-900 w-fit rounded-lg px-4 py-1 font-bold mb-4">Try Copying one of the Chibi URLs</p>
   <div class="h-[300px] overflow-y-auto">
     <table>
       <thead class="sticky -top-[1.5px]">
@@ -21,7 +16,10 @@
           <tr class="even:bg-secondary/50 odd:bg-primary/50">
             <td class="table-body"><%= url.id %></td>
             <td class="table-body"><%= url.clicks %></td>
-            <td class="table-body hover:text-green-500 hover:text-lg"><%= link_to url.chibi_url, "urls/#{url.chibi_url}", target: '_blank' %></td>
+            <td class="table-body hover:text-green-500 hover:text-lg">
+              <%= link_to url.chibi_url, "urls/#{url.chibi_url}", id: "id-#{url.id}", target: '_blank' %>
+              <%= button_tag "Copy", class: "clipboard-btn", :'data-clipboard-action' => "copy", :'data-clipboard-target' => "#id-#{url.id}" %>
+            </td>
             <td class="table-body"><%= url.original_url %></td>
           </tr>
         <% end %>

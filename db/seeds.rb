@@ -7,5 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Url.create(original_url: 'https://www.google.com', chibi_url: 'google')
-Url.create(original_url: 'https://medium.com/@sparkboldstudio/building-a-url-shortener-rails-app-96db60d3bf9d', chibi_url: 'ref1')
-Url.create(original_url: 'https://www.zauberware.com/en/articles/2019/create-a-url-shortener-with-ruby-on-rails', chibi_url: 'ref2')
+Url.create(original_url: 'https://medium.com/@sparkboldstudio/building-a-url-shortener-rails-app-96db60d3bf9d', chibi_url: 'Ref-1: ShortenURL-1')
+Url.create(original_url: 'https://www.zauberware.com/en/articles/2019/create-a-url-shortener-with-ruby-on-rails', chibi_url: 'Ref-2: ShortenURL-2')
+Url.create(original_url: 'https://clipboardjs.com/', chibi_url: 'Ref-3: ClipboardJS')

@@ -14,7 +14,6 @@ module.exports = {
         secondary: '#A5F1E9',
         border: '#7FBCD2',
         text: '#434b54',
-        bg: '#F5F6F8',
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
