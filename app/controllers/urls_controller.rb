@@ -35,7 +35,7 @@ class UrlsController < ApplicationController
   def destroy
     @url = Url.find_by(id: params[:id])
     if @url.destroy
-      flash[:notice] = "Url deleted successfully"
+      flash[:notice] = 'Url deleted successfully'
       redirect_to root_path
     else
       flash[:alert] = @url.errors.full_messages.first

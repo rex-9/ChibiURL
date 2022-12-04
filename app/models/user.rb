@@ -5,4 +5,6 @@ class User < ApplicationRecord
   has_many :urls
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 25 }
+  validates :password, presence: true, length: { minimum: 6 }
+  validates_confirmation_of :password
 end
