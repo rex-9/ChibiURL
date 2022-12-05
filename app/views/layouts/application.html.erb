@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ChibiUrl</title>
+    <title>ChibiURL</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
   </head>
-
-  <body>
-    <%= yield %>
+  <body class="font-quicksand">
+    <%= render 'partials/nav' %>
+    <div class="flex justify-center items-center">
+      <%= image_tag("mascot.png", class: "h-28") %>
+      <h1 class="text-text font-bold text-2xl ml-4">Chibi URL</h1>
+    </div>
+    <%= image_tag("top.png", class: "w-screen fixed -z-10 -top-8 h-[250px] left-0 object-cover") %>
+    <div class="fixed -z-10 bottom-0 left-0">
+      <%= image_tag("bl.png") %>
+    </div>
+    <div class="fixed -z-10 bottom-0 right-0">
+      <%= image_tag("br.png") %>
+    </div>
+    <div class="flex justify-center w-full pt-20">
+      <div>
+        <% if notice %>
+          <p class="bg-green-200 border-gray-200 border-2 text-green-900 w-fit rounded-lg px-4 py-1 font-bold mb-4"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="bg-red-200 border-gray-orange-200 border-2 text-red-900 w-fit rounded-lg px-4 py-1 font-bold mb-4 mt-4"><%= alert %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,38 @@
+<section>
+  <h1 class="flex justify-center mb-2 text-lg text-text font-bold"><%= header %></h1>
+  <p id="copied" class="mb-2 bg-green-200 border-gray-200 border-2 text-green-900 w-fit rounded-lg px-4 py-1 font-bold">Try Copying one of the Chibi URLs</p>
+  <div class="h-[290px] overflow-y-auto">
+    <table>
+      <thead class="sticky -top-[1.5px]">
+        <tr>
+          <th class="table-header">ID</th>
+          <th class="table-header">Clicks</th>
+          <th class="table-header">Chibi URL</th>
+          <th class="table-header">Original URL</th>
+          <% if header == "My URLs" %>
+            <th class="table-header">Action</th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% urls.each do |url| %>
+          <tr class="even:bg-secondary/50 odd:bg-primary/50">
+            <td class="table-body text-center"><%= url.id %></td>
+            <td class="table-body text-center"><%= url.clicks %></td>
+            <td class="table-body flex items-center gap-2">
+              <%= button_tag image_tag("copy.png", class: "w-5 hover:w-6"), class: "clipboard-btn", :'data-clipboard-action' => "copy", :'data-clipboard-target' => "#id-#{url.id}" %>
+              <%= link_to url.chibi_url, chibi_path(url.chibi_url), id: "id-#{url.id}", target: '_blank', class: 'hover:text-green-500 hover:underline' %>
+            </td>
+            <td class="table-body"><%= url.original_url %></td>
+            <% if header == "My URLs" %>
+              <td class="table-body"><%= button_to "Delete", url_path(url.id), method: :delete, class: "bg-red-300 rounded-lg text-white px-2 py-1 hover:bg-red-500 font-bold" %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex justify-center my-8">
+    <%= link_to 'Create new Chibi URL', new_url_path, class: 'btn' %>
+  </div>
+</section>
