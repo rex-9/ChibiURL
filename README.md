@@ -22,7 +22,7 @@
       - [6. Install NPM packages:](#6-install-npm-packages)
       - [7. Build and Watch Tailwindcss:](#7-build-and-watch-tailwindcss)
     - [Usage](#usage)
-      - [7. Run the server on port 3001:](#7-run-the-server-on-port-3001)
+      - [7. Run the server:](#7-run-the-server)
     - [Run tests](#run-tests)
   - [👥 Authors ](#-authors-)
   - [🤝 Contributing ](#-contributing-)
@@ -173,7 +173,7 @@ rails tailwindcss:watch
 
 To run the project, execute the following command:
 
-#### 7. Run the server on port 3001:
+#### 7. Run the server:
 
 ```
 rails server
