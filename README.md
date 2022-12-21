@@ -31,9 +31,9 @@
   - [❓ FAQ ](#-faq-)
   - [📝 License ](#-license-)
 
-# 📖 [React on Rails] <a name="about-project"></a>
+# 📖 Chibi URL <a name="about-project"></a>
 
-**[Chibi Url]** - the Url shortening service.
+**Chibi Url** - the Url shortening service.
 
 ## 🛠 Built With <a name="built-with"></a>
 
